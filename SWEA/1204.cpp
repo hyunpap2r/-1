@@ -29,15 +29,15 @@
 // cout << var;                         // 문자열 1개 출력하는 예제
 // cout << AB;                          // long long 변수 1개 출력하는 예제
 /////////////////////////////////////////////////////////////////////////////////////////////
-#include<algorithm>
+
 #include<iostream>
-#include<vector>
+
 using namespace std;
 
 int main(int argc, char** argv)
 {
 	int test_case;
-	int T, temp;
+	int T;
 	/*
 	   아래의 freopen 함수는 input.txt 를 read only 형식으로 연 후,
 	   앞으로 표준 입력(키보드) 대신 input.txt 파일로부터 읽어오겠다는 의미의 코드입니다.
@@ -49,18 +49,32 @@ int main(int argc, char** argv)
 	*/
 	//freopen("input.txt", "r", stdin);
 	cin>>T;
-    
 	/*
 	   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 	*/
-    vector<int> a;
 	for(test_case = 1; test_case <= T; ++test_case)
 	{
-        cin >> temp;
-        a.push_back(temp);
+        int scores[101] = {0};
+        int test_num;
+        cin >> test_num;
+
+        for (int i = 0; i < 1000; i++)
+        {
+            int score;
+            cin >> score;
+            scores[score]++;
+        }
+        int result = 0 ;
+        int max = 0;
+        for (int j = 0; j <101; j++)
+        {
+            if(scores[j] >= max)
+            {
+                max = scores[j];
+                result = j;
+            }
+        }
+        cout << "#" << test_num << " " << result << endl;
 	}
-    sort(a.begin(), a.end());
-    cout << a[T/2]<<endl;
-    //0부터 시작되므로 T/2를 하면 중간값이 나온다.
 	return 0;//정상종료시 반드시 0을 리턴해야합니다.
 }
