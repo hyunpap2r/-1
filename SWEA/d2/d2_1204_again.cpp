@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 
 	for(test_case = 1; test_case <= T; ++test_case)
 	{
-        int scores[101] = {0,};         // 100명의 성적
+        int scores[101] = {0,};         
         int test_num;                   
         cin >> test_num;                
 
