@@ -44,6 +44,7 @@ int main()
 		sort(sum.begin(), sum.end(), greater<>());
 
 
+		//cout << "#" << tc << " " << sum[4] << "\n";
 		printf("#%d %d\n", tc, sum[4]);
 		
 		a.clear();

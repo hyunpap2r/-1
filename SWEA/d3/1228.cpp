@@ -54,6 +54,7 @@
             cout << "\n";
             arr.clear();
             
+            
         }
         return 0;
     }

@@ -11,6 +11,7 @@ int main()
 	int tower[1000];
 	for (int testcase = 1; testcase <= 10; testcase++)
 	{
+		
 		int sum = 0;
 		cin >> n;
 		for (int i = 0; i < n; i++)

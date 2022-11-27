@@ -30,7 +30,9 @@ int main()
                 for (int k = i; k < i+M; k++)
                 {
                     for (int l = j; l < j+M; l++)
-                        sum += map[k][l];
+                    {
+                         sum += map[k][l];
+                    }  
                 }
                 if(sum > max)
                     max = sum;
