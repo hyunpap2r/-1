@@ -12,7 +12,7 @@ int main()
     int T;
     cin >> T;
     int map[15][15];
-
+    
 
     for (int test_case = 1; test_case <= T; test_case++)
     {
@@ -20,59 +20,58 @@ int main()
         int K;
         int count = 0;
         cin >> N >> K;
-
+        
         for (int i = 0; i < N; i++)
         {
             for (int j = 0; j < N; j++)
             {
-                cin >> map[i][j];
+                cin >> map[i][j]; 
             }
         }
 
-        for (int i = 0; i < N; i++)
-        {
-            int flag = 0;
-            for (int j = 0; j < N; j++)
+       for(int i=0; i<N; i++)
+       {
+            int flag=0;
+            for(int j=0; j<N; j++)
             {
-                if (map[i][j] == 1)
+                if(map[i][j]==1)      
                 {
                     flag++;
-                    if (flag > K)
-                        flag = 0;
-                    if (j == N - 1 && flag == K)   // °¡Àå ¸¶Áö¸· ÀÎµ¦½º°¡ 1ÀÏ°æ¿ì
+                    if(flag>K)
+                        flag=0;
+                    if(j==N-1&&flag==K)   // ê°€ì¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê°€ 1ì¼ê²½ìš°
                         count++;
                 }
-                else {
-                    if (flag == K)           // °¡Àå ¸¶Áö¸· ÀÎµ¦½º°¡ 1ÀÌ ¾Æ´Ò °æ¿ì
-                        count++;
-                    flag = 0;
+                else{
+                    if(flag==K)           // ê°€ì¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê°€ 1ì´ ì•„ë‹ ê²½ìš°
+                        count++;     
+                    flag=0;
                 }
             }
         }
 
-        for (int i = 0; i < N; i++)
-        {
-            int flag = 0;
-            for (int j = 0; j < N; j++) {
-                if (map[j][i] == 1)
+       for(int i=0; i<N; i++)
+       {
+            int flag=0;
+            for(int j=0; j<N; j++){
+                if(map[j][i]==1)
                 {
                     flag++;
-                    if (flag > K)
-                        flag = 0;
-                    if (j == N - 1 && flag == K)
+                    if(flag>K)
+                        flag=0;
+                    if(j==N-1&&flag==K)
                         count++;
                 }
-                else {
-                    if (flag == K)
+                else{
+                    if(flag==K)
                         count++;
-                    flag = 0;
+                    flag=0;
                 }
             }
         }
-        cout << "#" << test_case << " " << count << "\n";
+        cout << "#" << test_case << " " <<  count << "\n";
     }
 
-    
 
     return 0;
 }
